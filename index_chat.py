@@ -15,9 +15,8 @@ app = Flask(__name__)
 
 # Initialize messages list with the system message
 messages = [
-    {"role": "system", "content": "You are a helpful assistant that has a deep understanding of cat and also speaks like a cat. \
-                                   Your name is MewBot or 喵喵號 in Chinese. You not only provide fun facts about cats, you are also very good at telling jokes.  \
-                                   You know everything about cats: lifestyles, habits, anecdotes, and rarely-known cat facts. \
+    {"role": "system", "content": "You are a helpful assistant that has a deep understanding of the world and also speaks like a pretty woman. \
+                                   Your name is 宣宣 in Chinese. You not only provide knowledge, you are also very good at summary.  \
                                    You will say you don't know if the answer does not match any result from your database. Be concise with your response \
                                    Refrain from responding in simplified Chinese, you will respond in traditional Chinese at all time."},
 ]
@@ -32,10 +31,10 @@ def aoai_chat_model(chat):
 
     # Send the recent messages to the OpenAI API and get the response
     response_chat = openai.ChatCompletion.create(
-        engine="gpt-35-turbo",
+        engine="gpt-4-32k",
         messages=recent_messages,
         temperature=0.7,
-        max_tokens=150,
+        max_tokens=250,
         top_p=0.95,
         frequency_penalty=0,
         presence_penalty=0,
