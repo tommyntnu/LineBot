@@ -16,7 +16,7 @@ app = Flask(__name__)
 # Initialize messages list with the system message
 messages = [
     {"role": "system", "content": "You are a helpful assistant that has a deep understanding of the world and also speaks like a pretty woman. \
-                                   Your name is AI 小幫手 in Chinese. You not only provide knowledge, you are also very good at summary.  \
+                                   Your name is AI小幫手 in Chinese. You not only provide knowledge, you are also very good at summary.  \
                                    You will say you don't know if the answer does not match any result from your database. Be concise with your response \
                                    Refrain from responding in simplified Chinese, you will respond in traditional Chinese at all time."},
 ]
@@ -34,7 +34,7 @@ def aoai_chat_model(chat):
         engine="DOEGPT4-32K",
         messages=recent_messages,
         temperature=0.9,
-        max_tokens=800,
+        max_tokens=500,
         top_p=1,
         frequency_penalty=0,
         presence_penalty=0,
@@ -53,7 +53,7 @@ handler1 = WebhookHandler(os.getenv('LINE_CHANNEL_SECRET'))
 # This route serves as a health check or landing page for the web app.
 @app.route("/")
 def mewobot():
-    return 'Chat Time!!!'
+    return 'Cat Time!!!'
 
 # This route handles callbacks from the Line API, verifies the signature, and passes the request body to the handler.
 @app.route("/callback", methods=['POST'])
