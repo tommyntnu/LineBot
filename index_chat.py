@@ -33,8 +33,8 @@ def aoai_chat_model(chat):
     response_chat = openai.ChatCompletion.create(
         engine="DOEGPT4",
         messages=recent_messages,
-        temperature=0.9,
-        max_tokens=500,
+        temperature=1,
+        max_tokens=200,
         top_p=1,
         frequency_penalty=0,
         presence_penalty=0,
