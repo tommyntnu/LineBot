@@ -34,7 +34,7 @@ def aoai_chat_model(chat):
         engine="DOE-GPT4",
         messages=recent_messages,
         temperature=0.7,
-        max_tokens=150,
+        max_tokens=250,
         top_p=0.9,
         frequency_penalty=0,
         presence_penalty=0,
