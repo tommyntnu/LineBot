@@ -31,7 +31,7 @@ def aoai_chat_model(chat):
 
     # Send the recent messages to the OpenAI API and get the response
     response_chat = openai.ChatCompletion.create(
-        engine="DOE-GPT4",
+        engine="DOEGPT4",
         messages=recent_messages,
         temperature=0.7,
         max_tokens=250,
